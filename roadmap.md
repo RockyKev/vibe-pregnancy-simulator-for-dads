@@ -51,7 +51,7 @@
 
 ### Engineering
 - [x] Move all content to JSON
-- [ ] Review src
+- [ ] Review src/components and determine if they should be refactored
 - [ ] Add schema validation (Zod or JSON Schema)
 - [ ] Add Debug menu:
   - [ ] Ignore Node Locks (toggle)
@@ -67,6 +67,8 @@
 - [ ] Full 21-node act authored using simple `requires[]` rule
 - [ ] Several inventory items added
 - [ ] Several achievements added
+- [ ] Have a transition from Act to Act
+- [ ] Have placeholder for all 7 acts. 
 
 ### Acceptance
 - [ ] Full act can be completed start to finish
@@ -88,6 +90,11 @@
   - [ ] Sound effects
 - [ ] Add controller support
 - [ ] Final performance and accessibility pass
+
+### Content
+- [ ] All acts are set up with real content
+- [ ] Stats make sense
+- [ ] Ending exists
 
 ### Acceptance
 - [ ] Full playthrough across all acts is stable
