@@ -7,7 +7,7 @@
 - [x] Inventory item = emoji icon + 1–3 sentence blurb
 - [x] Achievements = badge + name + description
 - [x] Save system: versioned `localStorage`
-- [ ] Title screen shows Load if save exists, otherwise New Game
+- [x] Title screen shows Load if save exists, otherwise New Game
 - [x] Game is English-only
 
 ---
@@ -16,7 +16,7 @@
 
 ### Engineering
 - [x] Project bootstrapped (TypeScript + web stack)
-- [ ] Title screen: New Game / Load / Options (volume sliders)
+- [x] Title screen: New Game / Load / Options (volume sliders)
 - [x] Game UI with 3 tabs:
   - [x] Story Navigator
   - [x] Dialog + Choice
