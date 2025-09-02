@@ -1,0 +1,217 @@
+{
+	"actId": "first-trimester",
+	"nodes": [
+	  { "id": "n1", "title": "Pregnancy Confirmed", "requires": [], "sceneId": "scene_preg_confirm" },
+	  { "id": "n2", "title": "Birthing Plans", "requires": ["n1"], "sceneId": "scene_birth_plan" },
+	  { "id": "n3", "title": "Bills & Expenses", "requires": ["n1"], "sceneId": "scene_bills" },
+	  { "id": "n4", "title": "Nausea & Comfort", "requires": ["n3"], "sceneId": "scene_nausea" },
+	  { "id": "n5", "title": "Night Fears", "requires": ["n3"], "sceneId": "scene_fear" }
+	],
+	"scenes": [
+	  {
+		"id": "scene_preg_confirm",
+		"title": "Pregnancy Confirmed",
+		"steps": [
+		  {
+			"id": "s1",
+			"prose": "She tells you she just did a pregnancy test, and it’s confirmed. She’s roughly 4 weeks along. She asks how you feel.",
+			"choices": [
+			  { "id": "happy", "label": "You smile and tell her you're excited.", "effects": [ { "statDelta": { "stat": "support", "delta": 1 } } ] },
+			  { "id": "scared", "label": "You admit you feel nervous and scared." },
+			  { "id": "neutral", "label": "You nod quietly, unsure what to say." },
+			  { "id": "joke", "label": "You make a nervous joke about diapers." }
+			],
+			"next": {
+			  "happy": "s2_positive",
+			  "scared": "s2_vulnerable",
+			  "neutral": "s2_neutral",
+			  "joke": "s2_off",
+			  "default": "s2_neutral"
+			}
+		  },
+		  { "id": "s2_positive", "prose": "She squeezes your hand, visibly relieved by your excitement." },
+		  { "id": "s2_vulnerable", "prose": "She nods. \"Me too. We’ll figure it out together.\"" },
+		  { "id": "s2_neutral", "prose": "She watches you for a moment, trying to read you." },
+		  { "id": "s2_off", "prose": "She forces a smile. \"Can we be serious for a second?\"" }
+		],
+		"onResolve": [ { "grantAchievement": "started-game" } ]
+	  },
+	  {
+		"id": "scene_birth_plan",
+		"title": "Birthing Plans",
+		"steps": [
+		  {
+			"id": "s1",
+			"prose": "She shares her birthing plan and asks for your advice on where to give birth.",
+			"choices": [
+			  { "id": "hospital", "label": "Hospital", "effects": [ { "statDelta": { "stat": "knowledge", "delta": 1 } } ] },
+			  { "id": "home", "label": "Home birth" },
+			  { "id": "center", "label": "Birth center" }
+			],
+			"next": {
+			  "hospital": "s2_hospital",
+			  "home": "s2_home",
+			  "center": "s2_center",
+			  "default": "s2_default"
+			}
+		  },
+		  {
+			"id": "s2_hospital",
+			"prose": "She tilts her head. \"That’s not what I was leaning toward...\"",
+			"choices": [
+			  { "id": "support", "label": "I'm okay with your choice.", "effects": [ { "statDelta": { "stat": "communication", "delta": 1 } } ] },
+			  { "id": "hesitate", "label": "If you're sure…" },
+			  { "id": "disagree", "label": "I don't agree." }
+			],
+			"next": "s3_card"
+		  },
+		  {
+			"id": "s2_home",
+			"prose": "She folds her arms. \"I'm not sold on that.\"",
+			"next": "s3_card"
+		  },
+		  {
+			"id": "s2_center",
+			"prose": "She nods slowly. \"That's actually closer to what I wanted.\"",
+			"next": "s3_card"
+		  },
+		  {
+			"id": "s2_default",
+			"prose": "She looks thoughtful, not quite agreeing with your suggestion.",
+			"next": "s3_card"
+		  },
+		  {
+			"id": "s3_card",
+			"prose": "At the end, she hands you a card with her birthing plan. It says: Birth center."
+		  }
+		],
+		"onResolve": [ { "grantItem": "birth-plan-card" } ]
+	  },
+	  {
+		"id": "scene_bills",
+		"title": "Bills & Expenses",
+		"steps": [
+		  {
+			"id": "s1",
+			"prose": "She asks about bills for trimester visits and how to handle them.",
+			"choices": [
+			  { "id": "insurance", "label": "Through insurance", "effects": [ { "statDelta": { "stat": "preparation", "delta": 1 } } ] },
+			  { "id": "pocket", "label": "Out-of-pocket" },
+			  { "id": "parents", "label": "Ask parents for help" }
+			],
+			"next": "s2"
+		  },
+		  {
+			"id": "s2",
+			"prose": "She laughs and explains the reality, then asks you for a ballpark on out-of-pocket expenses.",
+			"choices": [
+			  { "id": "low", "label": "$500" },
+			  { "id": "mid", "label": "$2000" },
+			  { "id": "high", "label": "$10000", "effects": [ { "statDelta": { "stat": "knowledge", "delta": 1 } } ] }
+			],
+			"next": {
+			  "low": "s3_too_low",
+			  "mid": "s3_ok",
+			  "high": "s3_high",
+			  "default": "s3_ok"
+			}
+		  },
+		  { "id": "s3_too_low", "prose": "She snorts. \"If only. Let’s plan for more than that.\"" },
+		  { "id": "s3_ok", "prose": "\"That sounds closer,\" she says. \"We’ll double-check coverage and set aside a buffer.\"" },
+		  { "id": "s3_high", "prose": "She raises an eyebrow. \"That’s… a lot. But planning high isn’t the worst idea.\"" }
+		]
+	  },
+	  {
+		"id": "scene_nausea",
+		"title": "Nausea & Comfort",
+		"steps": [
+		  {
+			"id": "s1",
+			"prose": "She feels nauseous. You think of ways to help.",
+			"choices": [
+			  { "id": "ginger", "label": "Bring her ginger tea", "effects": [ { "statDelta": { "stat": "presence", "delta": 1 } } ] },
+			  { "id": "quiet", "label": "Let her rest quietly" },
+			  { "id": "doctor", "label": "Suggest calling the doctor" }
+			],
+			"next": "s2"
+		  },
+		  {
+			"id": "s2",
+			"prose": "She starts crying. You comfort her with words.",
+			"choices": [
+			  { "id": "reassure", "label": "You're strong, and I'll help however I can.", "effects": [ { "statDelta": { "stat": "support", "delta": 1 } } ] },
+			  { "id": "normalize", "label": "Lots of people go through this; it's normal." },
+			  { "id": "lighten", "label": "One day we'll laugh about this." }
+			],
+			"next": {
+			  "reassure": "s3_calm",
+			  "normalize": "s3_flat",
+			  "lighten": "s3_flat",
+			  "default": "s3_flat"
+			}
+		  },
+		  { "id": "s3_calm", "prose": "She breathes slower and nods, settling a little." },
+		  { "id": "s3_flat", "prose": "She stares at the ceiling, unconvinced, and tries to breathe through it." }
+		]
+	  },
+	  {
+		"id": "scene_fear",
+		"title": "Night Fears",
+		"steps": [
+		  {
+			"id": "s1",
+			"prose": "She wakes you up with an irrational fear.",
+			"choices": [
+			  { "id": "listen", "label": "I hear you, tell me more.", "effects": [ { "statDelta": { "stat": "empathy", "delta": 1 } } ] },
+			  { "id": "dismiss", "label": "That doesn't make sense." },
+			  { "id": "reassure", "label": "Don't worry, it's fine." }
+			],
+			"next": {
+			  "listen": "s2_listen",
+			  "dismiss": "s2_dismiss",
+			  "reassure": "s2_reassure",
+			  "default": "s2_listen"
+			}
+		  },
+		  {
+			"id": "s2_listen",
+			"prose": "She talks in circles for a while, and you keep listening.",
+			"choices": [
+			  { "id": "stay", "label": "Stay awake with her." },
+			  { "id": "soothe", "label": "Hold her hand and whisper calmly.", "effects": [ { "statDelta": { "stat": "presence", "delta": 1 } } ] },
+			  { "id": "sleep", "label": "Close your eyes and try to sleep." }
+			],
+			"next": "s3_end"
+		  },
+		  {
+			"id": "s2_dismiss",
+			"prose": "She goes quiet, then spirals harder.",
+			"choices": [
+			  { "id": "apologize", "label": "Sorry. Tell me more." },
+			  { "id": "double-down", "label": "It's still not logical." }
+			],
+			"next": {
+			  "apologize": "s2_listen",
+			  "double-down": "s3_end",
+			  "default": "s3_end"
+			}
+		  },
+		  {
+			"id": "s2_reassure",
+			"prose": "She nods, but you can tell it didn’t land.",
+			"choices": [
+			  { "id": "listen_now", "label": "Okay—tell me more." },
+			  { "id": "soothe_now", "label": "I'm here. Breathe with me.", "effects": [ { "statDelta": { "stat": "support", "delta": 1 } } ] }
+			],
+			"next": {
+			  "listen_now": "s2_listen",
+			  "soothe_now": "s3_end",
+			  "default": "s3_end"
+			}
+		  },
+		  { "id": "s3_end", "prose": "She eventually falls back asleep. You lie awake a while, thinking." }
+		]
+	  }
+	]
+  }
+  

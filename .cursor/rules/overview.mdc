@@ -1,0 +1,68 @@
+# Alter Life — Overview
+
+## What It Is
+**Alter Life** is a narrative-driven web game inspired by *Alter Ego* but tightly scoped to the journey from conception through a child’s second birthday. You play as the **Dad**, navigating emotional, practical, and supportive roles during pregnancy and early parenthood.
+
+The game is designed as a **finite, one-time experience**. A complete playthrough is intended to represent *your story*, blending narrative choice with light systems.
+
+---
+
+## Structure
+The game is divided into **Acts**, each representing a distinct phase:
+1. First Trimester
+2. Second Trimester
+3. Third Trimester
+4. Baby’s First 3 Months
+5. Baby Months 4–7
+6. Baby Months 8–12
+7. Baby Year Two
+
+Acts are experienced sequentially. Each has a set of story nodes you progress through.
+
+---
+
+## Core Gameplay
+- **Story Navigator (Tab 1)** — A decision-tree map of story nodes. Nodes unlock as you complete prior ones. Mainline nodes move you forward; side nodes enrich the experience.
+- **Dialog + Choice (Tab 2)** — Narrative scenes where you read short story text and make choices via radio-button groups. Choices can affect stats, grant items, or unlock achievements.
+- **Stats / Inventory / Achievements (Tab 3)** —
+  - *Stats*: 15 soft attributes (e.g., Support, Knowledge, Communication) rated 0–100.
+  - *Inventory*: Items gained (e.g., Ultrasound Photo). Each has a graphic + short blurb.
+  - *Achievements*: Unlockable milestones, shown as badges with descriptions.
+
+---
+
+## Player Role
+- **Supportive Partner:** Be present, listen, plan ahead, and handle situational challenges.
+- **Learner:** Gain knowledge about pregnancy and early parenthood woven into the story.
+- **Decision-Maker:** Choices shape stats and how events resolve, but there are no fail states or dead ends.
+
+---
+
+## Key Features
+- **One-and-Done Nodes:** Each story node is playable once. Only the Debug menu allows bypassing locks.
+- **Acts as Milestones:** Each act concludes with a dedicated transition screen, marking progress and setting the stage for the next phase.
+- **Inventory as Memory:** Items collected (like the ultrasound image) provide narrative anchors with descriptive blurbs.
+- **Achievements as Reflection:** Serve as optional goals and commemorations of choices.
+- **Stats as Feedback:** Soft signals of your play style — supportive, knowledgeable, present, etc. — but not strict win/lose conditions.
+
+---
+
+## Player Experience
+Tone is warm, respectful, and grounded. The goal is to:
+- Build empathy for the partner’s experience.
+- Teach basic pregnancy and parenting knowledge in context.
+- Encourage proactive support and planning.
+- Deliver a contained, reflective story arc.
+
+---
+
+## Out of Scope
+- No branching dead-ends (the story always continues).
+- No complex medical simulations (all info is simplified and narrative-first).
+- No multiplayer or repeat-run design — one complete story per player.
+
+---
+
+## Summary
+**Alter Life** is a focused, narrative choice game where the Dad role is central. Through 7 acts, the player experiences the emotional highs, practical challenges, and learning moments of pregnancy and early childhood. It’s meant to be a personal, one-time journey blending story, light systems, and empathy.
+
