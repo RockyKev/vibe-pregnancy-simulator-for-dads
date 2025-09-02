@@ -13,8 +13,8 @@
       <div class="flex h-16">
         <!-- Story Tab (30%) -->
         <button @click="setActiveTab('story')" :disabled="isDialogActive"
-          class="flex-1 flex items-center justify-center text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          :class="activeTab === 'story' ? 'text-primary bg-accent' : 'text-muted-foreground hover:text-foreground'">
+          class="flex-1 flex items-center justify-center text-sm font-medium transition-colors border-r border-border disabled:opacity-50 disabled:cursor-not-allowed"
+          :class="activeTab === 'story' ? 'text-primary bg-accent border-primary' : 'text-muted-foreground hover:text-foreground hover:bg-accent'">
           <div class="flex flex-col items-center">
             <span class="text-lg">📖</span>
             <span>Story</span>
@@ -23,8 +23,8 @@
 
         <!-- Dialog Tab (30%) -->
         <button @click="setActiveTab('dialog')" :disabled="isDialogActive"
-          class="flex-1 flex items-center justify-center text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          :class="activeTab === 'dialog' ? 'text-primary bg-accent' : 'text-muted-foreground hover:text-foreground'">
+          class="flex-1 flex items-center justify-center text-sm font-medium transition-colors border-r border-border disabled:opacity-50 disabled:cursor-not-allowed"
+          :class="activeTab === 'dialog' ? 'text-primary bg-accent border-primary' : 'text-muted-foreground hover:text-foreground hover:bg-accent'">
           <div class="flex flex-col items-center">
             <span class="text-lg">💬</span>
             <span>Dialog</span>
@@ -33,8 +33,8 @@
 
         <!-- Stats Tab (30%) -->
         <button @click="setActiveTab('stats')" :disabled="isDialogActive"
-          class="flex-1 flex items-center justify-center text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          :class="activeTab === 'stats' ? 'text-primary bg-accent' : 'text-muted-foreground hover:text-foreground'">
+          class="flex-1 flex items-center justify-center text-sm font-medium transition-colors border-r border-border disabled:opacity-50 disabled:cursor-not-allowed"
+          :class="activeTab === 'stats' ? 'text-primary bg-accent border-primary' : 'text-muted-foreground hover:text-foreground hover:bg-accent'">
           <div class="flex flex-col items-center">
             <span class="text-lg">📊</span>
             <span>Stats</span>
@@ -44,7 +44,7 @@
         <!-- Settings Tab (10%) -->
         <button @click="setActiveTab('settings')" :disabled="isDialogActive"
           class="w-16 flex items-center justify-center text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          :class="activeTab === 'settings' ? 'text-primary bg-accent' : 'text-muted-foreground hover:text-foreground'">
+          :class="activeTab === 'settings' ? 'text-primary bg-accent' : 'text-muted-foreground hover:text-foreground hover:bg-accent'">
           <div class="flex flex-col items-center">
             <span class="text-lg">⚙️</span>
             <span class="text-xs">Gear</span>

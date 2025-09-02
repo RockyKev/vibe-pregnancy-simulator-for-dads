@@ -40,7 +40,7 @@
           </button>
 
           <button v-if="canContinue" @click="continueStep" :disabled="!canContinue"
-            class="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+            class="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
             Continue →
           </button>
         </div>
@@ -53,7 +53,7 @@
           You've completed this story node.
         </p>
         <button @click="returnToStory"
-          class="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors">
+          class="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
           Return to Story
         </button>
       </div>

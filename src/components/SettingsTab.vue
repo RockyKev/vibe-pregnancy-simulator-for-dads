@@ -9,17 +9,17 @@
 
         <div class="space-y-3">
           <button @click="startNewGame"
-            class="w-full p-3 border border-destructive text-destructive rounded-md hover:bg-destructive hover:text-destructive-foreground transition-colors">
+            class="w-full p-3 border border-destructive text-destructive bg-background rounded-md hover:bg-destructive hover:text-destructive-foreground transition-colors">
             Start New Game
           </button>
 
           <button @click="exportSave"
-            class="w-full p-3 border border-border rounded-md hover:bg-accent transition-colors">
+            class="w-full p-3 border border-border bg-background text-foreground rounded-md hover:bg-accent transition-colors">
             Export Save
           </button>
 
           <button @click="importSave"
-            class="w-full p-3 border border-border rounded-md hover:bg-accent transition-colors">
+            class="w-full p-3 border border-border bg-background text-foreground rounded-md hover:bg-accent transition-colors">
             Import Save
           </button>
         </div>
