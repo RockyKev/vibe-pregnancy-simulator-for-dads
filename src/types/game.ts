@@ -15,17 +15,11 @@ export type Scene = {
 export type Step = {
   id: string
   prose: string | { md: string }
-  groups: OptionGroup[]
-  next?: string
+  choices?: Choice[]
+  next?: string | Record<string, string>
 }
 
-export type OptionGroup = {
-  id: string
-  prompt: string
-  options: Option[]
-}
-
-export type Option = {
+export type Choice = {
   id: string
   label: string
   effects?: Effect[]

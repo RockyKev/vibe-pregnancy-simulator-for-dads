@@ -1,15 +1,10 @@
 <template>
   <div class="p-4">
     <h1 class="text-2xl font-bold mb-6">Story Navigator</h1>
-    
+
     <div class="space-y-4">
-      <div
-        v-for="node in actData?.nodes"
-        :key="node.id"
-        class="p-4 border rounded-lg transition-all"
-        :class="getNodeClasses(node)"
-        @click="handleNodeClick(node)"
-      >
+      <div v-for="node in actData?.nodes" :key="node.id" class="p-4 border rounded-lg transition-all"
+        :class="getNodeClasses(node)" @click="handleNodeClick(node)">
         <div class="flex items-center justify-between">
           <div>
             <h3 class="font-semibold">{{ node.title }}</h3>
@@ -31,6 +26,10 @@ import { ref, onMounted } from 'vue'
 import { useGameState } from '@/composables/useGameState'
 import type { Node, ActData, NodeState } from '@/types/game'
 
+const emit = defineEmits<{
+  startNode: []
+}>()
+
 const { gameState, getNodeState, startNode, updateUnlockedNodes } = useGameState()
 
 const actData = ref<ActData | null>(null)
@@ -38,7 +37,7 @@ const actData = ref<ActData | null>(null)
 onMounted(async () => {
   // Load the first trimester content
   try {
-    const response = await fetch('/content/first-trimester.json')
+    const response = await fetch('/first-trimester.json')
     actData.value = await response.json()
     updateUnlockedNodes(actData.value?.nodes)
   } catch (error) {
@@ -51,7 +50,7 @@ onMounted(async () => {
 function getNodeClasses(node: Node) {
   const state = getNodeState(node)
   const baseClasses = 'cursor-pointer hover:shadow-md'
-  
+
   switch (state) {
     case 'locked':
       return `${baseClasses} bg-muted border-muted-foreground/20 opacity-50 cursor-not-allowed`
@@ -96,8 +95,7 @@ function handleNodeClick(node: Node) {
   const state = getNodeState(node)
   if (state === 'unlocked') {
     startNode(node.id)
-    // Switch to dialog tab to show the scene
-    // This will be handled by the parent component
+    emit('startNode')
   }
 }
 </script>
