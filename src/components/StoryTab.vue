@@ -46,9 +46,7 @@ onMounted(async () => {
   }
 })
 
-function getNodeState(node: Node): NodeState {
-  return getNodeState(node)
-}
+
 
 function getNodeClasses(node: Node) {
   const state = getNodeState(node)
